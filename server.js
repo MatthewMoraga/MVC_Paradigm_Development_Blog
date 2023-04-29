@@ -31,7 +31,7 @@ app.use(express.json());
 // middleware for allowing the client to send standard form data
 app.use(express.urlencoded({ extended: true }));
 
-// setting up the session for our routes
+// setting up the session for the routes
 app.use(expressSession({
     secret: process.env.SESSION_SECRET,
     cookie: {},
