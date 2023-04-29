@@ -22,8 +22,8 @@ app.use(express.static("public"));
 app.engine("hbs", engine({
     extname: ".hbs"
 }));
-app.set("viewengine", "hbs")
-app.set("views", ".views")
+app.set("viewengine", "hbs");
+app.set("views", "./views");
 
 // middleware for allowing the client to send through json data
 app.use(express.json());
