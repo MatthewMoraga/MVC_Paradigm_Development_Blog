@@ -3,7 +3,7 @@
 // then i setup .env, and connection from there
 const express = require("express");
 const expressSession = require("express-session");
-const authRoutes = require("./controllers");
+const routes = require("./controllers");
 const viewRoutes = require("./views");
 const db = require("./config/connection");
 const { engine } = require("express-handlebars");
@@ -37,10 +37,9 @@ app.use(expressSession({
     cookie: {},
     resave: false,
     saveUninitialized: false,
-}))
+}));
 
-// eventually routes will be ready for app.use
-// app.use(routes);
+app.use(routes);
 
 // db sync to start our server with the database
 db.sync().then(() => {

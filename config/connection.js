@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize")
+const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
 const connection = new Sequelize(
@@ -11,4 +11,4 @@ const connection = new Sequelize(
     }
 );
 
-module.exports = connection
+module.exports = connection;
