@@ -3,7 +3,8 @@
 // then i setup .env, and connection from there
 const express = require("express");
 const expressSession = require("express-session");
-const routes = require("./controllers");
+const authRoutes = require("./controllers");
+const viewRoutes = require("./views");
 const db = require("./config/connection");
 const { engine } = require("express-handlebars");
 
