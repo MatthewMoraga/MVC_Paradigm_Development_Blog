@@ -26,6 +26,13 @@ router.get("/dashboard", isAutheticated, async (req, res) => {
     });
 });
 
+router.get("/homepage", isAutheticated, async (req, res) => {
+    const user = await User.findByPk(req.session.user_id);
+    res.render("private/homepage", {
+        email: user.email
+    });
+});
+
 // probably more private routes will be added later
 
 // exporting
