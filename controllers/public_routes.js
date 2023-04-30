@@ -28,3 +28,5 @@ router.get("/register", isLoggedIn, (req, res) => {
 })
 
 // more public routes to be added
+
+module.exports = router;

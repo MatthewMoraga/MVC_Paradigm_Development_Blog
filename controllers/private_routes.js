@@ -8,7 +8,7 @@ const User = require("../models/User");
 
 function isAutheticated(req, res, next) {
     if (!req.session.user_id) {
-        return res.redirect("/login");
+        return res.redirect("/");
     }
     next();
 }
@@ -21,7 +21,7 @@ function isAutheticated(req, res, next) {
 
 router.get("/dashboard", isAutheticated, async (req, res) => {
     const user = await User.findByPk(req.session.user_id);
-    res.render("/private/dashboard", {
+    res.render("private/dashboard", {
         email: user.email
     });
 });

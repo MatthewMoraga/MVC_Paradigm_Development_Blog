@@ -11,7 +11,7 @@ const User = require("../models/User");
 // if there is a succesfull login we store the user id to session and send them
 // to the dashbaord page
 
-router.post("auth/login", async (req, res) => {
+router.post("/auth/login", async (req, res) => {
     const user_data = req.body;
 
     const user = await User.findOne({
@@ -21,7 +21,7 @@ router.post("auth/login", async (req, res) => {
     });
     if (!user) return res.redirect("/");
 
-    const validPassword = await user.validPassword(user_data.password);
+    const validPassword = await user.validatePass(user_data.password);
     if (!validPassword) return res.redirect("/");
 
     req.session.user_id = user.id;
@@ -35,7 +35,7 @@ router.post("auth/login", async (req, res) => {
 // and then they are redirected to the dashboard
 // then if an error is thrown it is caught and the user is redirected to the login page
 
-router.post("auth/register", async (req, res) => {
+router.post("/auth/register", async (req, res) => {
     const user_data = req.body;
 
     try {
@@ -44,7 +44,7 @@ router.post("auth/register", async (req, res) => {
         req.session.user_id = user.id;
         res.redirect("/dashboard");
     } catch (err) {
-        res.redirect("/login");
+        res.redirect("/");
     }
 });
 
@@ -52,11 +52,12 @@ router.post("auth/register", async (req, res) => {
 // then the destroy method is run and removes the session data
 // then the user is redirected back to the root page
 
-router.get("auth/logout", (req, res) => {
+router.get("/auth/logout", (req, res) => {
     req.session.destroy();
     res.redirect("/");
 });
 
+module.exports = router;
 
     
     
