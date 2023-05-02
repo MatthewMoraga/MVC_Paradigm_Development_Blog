@@ -22,14 +22,16 @@ function isAutheticated(req, res, next) {
 router.get("/dashboard", isAutheticated, async (req, res) => {
     const user = await User.findByPk(req.session.user_id);
     res.render("private/dashboard", {
-        email: user.email
+        email: user.email,
+        username: user.username
     });
 });
 
 router.get("/homepage", isAutheticated, async (req, res) => {
     const user = await User.findByPk(req.session.user_id);
     res.render("private/homepage", {
-        email: user.email
+        email: user.email,
+        username: user.username
     });
 });
 
