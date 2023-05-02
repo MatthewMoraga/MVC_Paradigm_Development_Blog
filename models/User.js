@@ -55,6 +55,9 @@ User.init(
         }
     },  {
         sequelize: db,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
         modelName: "user",
         hooks: {
             async beforeCreate(user) {

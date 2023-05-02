@@ -16,7 +16,8 @@ router.post("/auth/login", async (req, res) => {
 
     const user = await User.findOne({
         where: {
-            email: user_data.email
+            email: user_data.email,
+            username: user_data.username
         }
     });
     if (!user) return res.redirect("/");
@@ -25,6 +26,7 @@ router.post("/auth/login", async (req, res) => {
     if (!validPassword) return res.redirect("/");
 
     req.session.user_id = user.id;
+    req.session.username = user.username;
     res.redirect("/dashboard");
 });
 
@@ -42,8 +44,9 @@ router.post("/auth/register", async (req, res) => {
         const user = await User.create(user_data);
 
         req.session.user_id = user.id;
+        req.session.username = user.username;
         res.redirect("/dashboard");
-    } catch (err) {
+    } catch (err) {-
         res.redirect("/");
     }
 });
