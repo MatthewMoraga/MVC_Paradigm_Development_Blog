@@ -25,32 +25,45 @@ class User extends Model {
 // then bycrpt will hash an encrypted string mixed with the standard password string
 // and add 10 levels of salt to the encryption 
 
-User.init({
-    email: {
-        type: DataTypes.STRING,
-        unique: true,
-        validate: {
-            isEmail: true
+User.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
         },
-        allowNull: false
-    },
-    password: {
-        type: DataTypes.STRING,
-        validate: {
-            len: 6
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
         },
-        allowNull: false
-    }
-}, {
-    sequelize: db,
-    modelName: "user",
-    hooks: {
-        async beforeCreate(user) {
-            const encryptedPassword = await bcrypt.hash(user.password, 10);
-            user.password = encryptedPassword;
+        email: {
+            type: DataTypes.STRING,
+            unique: true,
+            validate: {
+                isEmail: true
+            },
+            allowNull: false
+        },
+        password: {
+            type: DataTypes.STRING,
+            validate: {
+                len: 6
+            },
+            allowNull: false
+        }
+    },  {
+        sequelize: db,
+        modelName: "user",
+        hooks: {
+            async beforeCreate(user) {
+                const encryptedPassword = await bcrypt.hash(user.password, 10);
+                user.password = encryptedPassword;
+            }
         }
     }
-});
+);
 
 // exporting the User model
 
