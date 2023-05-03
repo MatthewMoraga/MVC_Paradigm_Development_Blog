@@ -46,7 +46,7 @@ router.post("/auth/register", async (req, res) => {
         req.session.user_id = user.id;
         req.session.username = user.username;
         res.redirect("/dashboard");
-    } catch (err) {-
+    } catch (err) {
         res.redirect("/");
     }
 });
