@@ -6,9 +6,20 @@
             <a href="/dashboard">dashboard</a>
             <a href="/createpost">Write a New Blog Post</a>
         </nav>
-    <h1>Write a New Blog Post</h1>
+    <h1>New BlogPost Form</h1>
 
         <section>Posts</section>
+
+        <form id="createBlogPostForm" action="/api/posts" method="POST">
+            <section>
+            <input id="blogPostTitlePost" name="title" type="title", placeholder="Enter BlogPost Title">
+            </section>
+            <section>
+            <textarea id="blogPostContentPost" name="content" type="content" rows="5" placeholder="Enter BlogPost"></textarea>
+            </section>
+            <button type="submit">Create BlogPost</button>
+        </form>
+
 
     </header>
 </body>

@@ -7,6 +7,14 @@
             <a href="/homepage">Homepage</a>
             <a href="/createpost">Write a New Blog Post</a>
         </nav>
+
+        <h1>Your Posts</h1>
+        <h1>Your Post List</h1>
+        {{#each posts}}
+        <section class="post-wrap">{{title}}</section>
+        <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
+        <a href="/post/{{id}}">{{title}}</a>
+        {{/each}}
     </header>
 </body>
 
