@@ -1,8 +1,10 @@
 // function the makes a new blogpost with the attributes from the Post model
 // sends a fetch request to /api/posts and stringifies title, content from the Post model
-// then js tells the browser that the content-type is json 
+// then js tells the browser that the content-type is json
+// then a submit event is listened for
 // then upon success the user is taken to the dashboard page where they will see their new post
-// then a new blogPost form is created so that the user can enter a new blogpost
+// otherwise throw the user an alert error
+
 
 const createNewBlogPost = async (event) => {
     event.preventDefault();
