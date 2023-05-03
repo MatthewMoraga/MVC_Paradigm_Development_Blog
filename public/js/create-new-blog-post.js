@@ -1,4 +1,3 @@
-
 const createNewBlogPost = async (event) => {
     event.preventDefault();
 
@@ -8,8 +7,8 @@ const createNewBlogPost = async (event) => {
     if (blogPostTitle && blogPostContent) {
         const blogPostResponse = await fetch("/api/posts", {
             method: "POST",
-            body: JSON.stringify({ title, content }),
-            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ blogPostTitle, blogPostContent }),
+            headers: { "Content-Type": "application/json" },
         });
 
         if (blogPostResponse.ok) {
@@ -20,7 +19,7 @@ const createNewBlogPost = async (event) => {
     }
 };
 
-const createNewBlogPostForm = document.querySelector("#createNewBlogPostForm");
-if(createNewBlogPostForm) {
+const createNewBlogPostForm = document.querySelector(".createBlogPostForm");
+if (createNewBlogPostForm) {
     createNewBlogPostForm.addEventListener("submit", createNewBlogPost);
 }
