@@ -8,7 +8,12 @@
         </nav>
     <h1>This is where all of the posts will go</h1>
 
-        <section>Posts</section>
+        <h1>All Posts</h1>
+         {{#each posts}}
+        <section class="post-wrap">{{title}}</section>
+        <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
+        <a href="/post/{{id}}">{{title}}</a>
+        {{/each}}
 
     </header>
 </body>

@@ -4,7 +4,8 @@
 const express = require("express");
 const expressSession = require("express-session");
 const db = require("./config/connection");
-const { engine } = require("express-handlebars");
+const { engine, create } = require("express-handlebars");
+
 
 // PORT also needs to be set for Heroku deployment setting
 const PORT = process.env.PORT || 3001
@@ -17,7 +18,8 @@ const app = express();
 
 // setting up the view engine for handlebar template
 app.engine("hbs", engine({
-    extname: ".hbs"
+    extname: ".hbs",
+    helpers: require("./utilities/helpers/date_format")
 }));
 app.set("view engine", "hbs");
 app.set("views", "./views");

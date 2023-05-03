@@ -1,5 +1,5 @@
 // importing
-const router = require("express").router();
+const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 const isAutheticated = require("../../utilities/isAuth");
 
@@ -8,7 +8,7 @@ const isAutheticated = require("../../utilities/isAuth");
 
 // route to get all posts with thier user
 
-router.get("/", async (req, res) => {
+router.get("/", isAutheticated, async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [{ model: User, attributes: ["username"]}],
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 
 // route to get a post by its id with its usernames and comments
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", isAutheticated, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.ids, {
             include: [
@@ -96,6 +96,6 @@ router.delete("/:id", isAutheticated, async (req, res) => {
     }
 });
 
-module.exports.router;
+module.exports = router;
 
 
