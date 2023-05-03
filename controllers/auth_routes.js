@@ -18,7 +18,6 @@ router.post("/auth/login", async (req, res) => {
     const user = await User.findOne({
         where: {
             email: user_data.email,
-            username: user_data.username
         }
     });
     if (!user) return res.redirect("/");
