@@ -1,7 +1,10 @@
 
 <h1>Login Page</h1>
-<form class="loginForm" action="/auth/login" method="POST">
-<input id="email" name="email" type="email" placeholder="enter email">
-<input id="password" name="password" type="password" placeholder="enter password">
-<button>submit</button>
+<form class="login-form">
+    <label for="email"></label>
+    <input name="email" id="login-email" type="email" placeholder="enter email">
+    <label for="password"></label>
+    <input name="password" id="login-password" type="password" placeholder="enter password">
+    <button type="submit">Submit</button>
+    <button type="button" onclick="window.history.go(-1)" value="cancel">Back</button>
 </form>

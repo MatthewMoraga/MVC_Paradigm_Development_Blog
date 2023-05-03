@@ -1,21 +1,26 @@
 <body>
     <header>
-    <h1>dashboard</h1>
     <h1>welcome! {{username}}</h1>
+    <h1>Your Dashboard</h1>
         <nav>
-            <a href="/auth/logout">Logout</a>
             <a href="/homepage">Homepage</a>
             <a href="/createpost">Write a New Blog Post</a>
+            <a href="/auth/logout">Logout</a>
         </nav>
-
-        <h1>Your Posts</h1>
-        <h1>Your Post List</h1>
-        {{#each posts}}
-        <section class="post-wrap">{{title}}</section>
-        <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-        <a href="/post/{{id}}">{{title}}</a>
-        {{/each}}
     </header>
+
+        <h1>Your Posts:</h1>
+        {{#each posts}}
+        <p>Blog Post:</p>
+        <section>
+            <p>{{title}}</p>
+            <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
+            <textarea readonly row="5" class="dashboard-textarea" style="resize:none;">{{content}}</textarea>
+            <p>Post Options:</p>
+            <a href="/editpost/{{id}}">Edit Post</a>
+            <button class="btn delete-button delete-post" data-post-id="{{id}}">Delete Post</button>
+        </section>
+        {{/each}}
 </body>
 
 
