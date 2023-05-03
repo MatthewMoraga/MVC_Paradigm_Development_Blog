@@ -10,6 +10,7 @@ const User = require("../models/User");
 // then if no password matches redirect the user to the root page
 // if there is a succesfull login we store the user id to session and send them
 // to the dashbaord page
+// added username
 
 router.post("/auth/login", async (req, res) => {
     const user_data = req.body;

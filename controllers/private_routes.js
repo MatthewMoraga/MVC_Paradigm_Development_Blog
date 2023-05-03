@@ -1,17 +1,7 @@
 // importing packages and files
 const router = require("express").Router();
 const User = require("../models/User");
-
-// middleware helper function that checks if a user is autheticated
-// then checks that thier user id is stored to req.session.user_id
-// if they are not authenticed then the user is redirected to the login page
-
-function isAutheticated(req, res, next) {
-    if (!req.session.user_id) {
-        return res.redirect("/");
-    }
-    next();
-}
+const isAutheticated = require("../utilities/isAuth");
 
 // when the user sends a get request to the dashboard the isAuth function runs
 // to check to see if they are authenticated
@@ -22,14 +12,24 @@ function isAutheticated(req, res, next) {
 router.get("/dashboard", isAutheticated, async (req, res) => {
     const user = await User.findByPk(req.session.user_id);
     res.render("private/dashboard", {
-        email: user.email
+        email: user.email,
+        username: user.username
     });
 });
 
 router.get("/homepage", isAutheticated, async (req, res) => {
     const user = await User.findByPk(req.session.user_id);
     res.render("private/homepage", {
-        email: user.email
+        email: user.email,
+        username: user.username
+    });
+});
+
+router.get("/createpost", isAutheticated, async (req, res) => {
+    const user = await User.findByPk(req.session.user_id);
+    res.render("private/createpost", {
+        email: user.email,
+        username: user.username
     });
 });
 
