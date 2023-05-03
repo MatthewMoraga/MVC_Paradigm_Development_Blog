@@ -6,10 +6,13 @@ const router = require("express").Router();
 // it can be imported in on the server page as const routes = require("./controllers")
 // api routes to be added later for blog posts
 
-const apiRoutes = require("./api_routes/index");
+const apiRoutes = require("./api_routes");
 const homeRoutes = require("./public_routes");
 const authRoutes = require("./auth_routes");
 const privateRoutes = require("./private_routes");
+
+// sets the api routes to be affixed with /api
+// example now blogpost routes are /api/posts 
 
 router.use("/api", apiRoutes);
 router.use("/", homeRoutes);

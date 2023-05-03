@@ -1,13 +1,19 @@
+// function the makes a new blogpost with the attributes from the Post model
+// sends a fetch request to /api/posts and stringifies title, content from the Post model
+// then js tells the browser that the content-type is json 
+// then upon success the user is taken to the dashboard page where they will see their new post
+// then a new blogPost form is created so that the user can enter a new blogpost
+
 const createNewBlogPost = async (event) => {
     event.preventDefault();
 
-    const blogPostTitle = document.querySelector("#blogPostTitlePost").value.trim();
-    const blogPostContent = document.querySelector("#blogPostContentPost").value.trim();
+    const title = document.querySelector("#blogPostTitlePost").value.trim();
+    const content = document.querySelector("#blogPostContentPost").value.trim();
 
-    if (blogPostTitle && blogPostContent) {
+    if (title && content) {
         const blogPostResponse = await fetch("/api/posts", {
             method: "POST",
-            body: JSON.stringify({ blogPostTitle, blogPostContent }),
+            body: JSON.stringify({ title, content }),
             headers: { "Content-Type": "application/json" },
         });
 

@@ -11,11 +11,13 @@
         <section>Posts</section>
 
         <form class="createBlogPostForm">
+                <label for="blogPostTitlePost">Title:</label>
             <section>
-            <input id="blogPostTitlePost" type="text" placeholder="Enter BlogPost Title">
+                <input name="title" id="blogPostTitlePost" type="text" placeholder="Enter BlogPost Title">
             </section>
+                <label for="blogPostContentPost"></label>
             <section>
-            <textarea id="blogPostContentPost" rows="5" placeholder="Enter BlogPost"></textarea>
+                <textarea name="content" id="blogPostContentPost" rows="5" placeholder="Enter BlogPost"></textarea>
             </section>
             <button type="submit">Create BlogPost</button>
         </form>
