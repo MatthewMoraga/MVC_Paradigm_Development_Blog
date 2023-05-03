@@ -1,22 +1,26 @@
-// a function for error handling that sends the user back an error
-// then an alert is shown and sends them back to the root 
-
-const loginFormHandling = async (event) => {
+const loginHandling = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector("#email");
-    const password = document.querySelector("#password");
+    const email = document.querySelector("#login-email").value.trim();
+    const password = document.querySelector("#login-password").value.trim();
 
-    if (email & password) {
-
+    if (email && password) {
         
-    } else {
-        alert("no user found");
-        document.location.replace("/");
+        const loginResponse = await fetch("/auth/login", {
+            method: "POST",
+            body: JSON.stringify({ email, password }),
+            headers: { "Content-Type": "application/json" },
+        });
+        
+        if (loginResponse.ok) {
+            document.location.replace("/dashboard");
+        } else {
+            alert("no user found");
+        }
     }
 }
 
-const loginForm = document.querySelector(".loginForm");
-if (loginForm) {
-    loginForm.addEventListener("submit", loginFormHandling);
+const loginPageForm = document.querySelector(".login-form");
+if (loginPageForm) {
+    loginPageForm.addEventListener("submit", loginHandling)
 }

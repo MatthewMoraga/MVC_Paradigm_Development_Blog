@@ -20,11 +20,15 @@ router.post("/auth/login", async (req, res) => {
             email: user_data.email,
         }
     });
+
     if (!user) return res.redirect("/");
 
+    
     const validPassword = await user.validatePass(user_data.password);
     if (!validPassword) return res.redirect("/");
+    
 
+    
     req.session.user_id = user.id;
     req.session.username = user.username;
     res.redirect("/dashboard");
