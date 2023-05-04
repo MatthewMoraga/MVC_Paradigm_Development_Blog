@@ -6,7 +6,7 @@ const loginHandling = async (event) => {
 
     if (email && password) {
         
-        const loginResponse = await fetch("/api/auth/users", {
+        const loginResponse = await fetch("/auth/login", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
