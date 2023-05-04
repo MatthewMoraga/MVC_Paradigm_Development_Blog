@@ -90,7 +90,7 @@ router.get("/editpost/:id", async (req, res) => {
         const post = postData.get({ plain: true });
         const user = await User.findByPk(req.session.user_id);
 
-        res.render("/editpost", {
+        res.render("private/editpost", {
             ...post,
             email: user.email,
             username: user.username
