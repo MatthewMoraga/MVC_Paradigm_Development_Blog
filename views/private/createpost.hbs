@@ -1,23 +1,23 @@
 <body>
     <header>
-    <h1>welcome! {{username}}</h1>
+    <h1>Welcome! {{username}}</h1>
         <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/homepage">Homepage</a>
             <a href="/auth/logout">Logout</a>
-            <a href="/dashboard">dashboard</a>
-            <a href="/createpost">Write a New Blog Post</a>
         </nav>
     <h1>New BlogPost Form</h1>
 
-        <section>Posts</section>
+        <section>Create a New BlogPost</section>
 
         <form class="createBlogPostForm">
-                <label for="blogPostTitlePost">Title:</label>
+                <label for="blogPostTitlePost"></label>
             <section>
                 <input name="title" id="blogPostTitlePost" type="text" placeholder="Enter BlogPost Title">
             </section>
                 <label for="blogPostContentPost"></label>
             <section>
-                <textarea name="content" id="blogPostContentPost" rows="5" placeholder="Enter BlogPost"></textarea>
+                <textarea name="content" id="blogPostContentPost" rows="10" style="resize: none;" placeholder="Enter BlogPost"></textarea>
             </section>
             <button type="submit">Create BlogPost</button>
         </form>

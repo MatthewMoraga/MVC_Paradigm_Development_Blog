@@ -1,8 +1,12 @@
 
 <h1>Register Page</h1>
-<form action="/auth/register" method="POST">
-<input name="email" type="email" placeholder="enter email">
-<input name="username" type="username" placeholder="enter username">
-<input name="password" type="password" placeholder="enter password">
-<button>submit</button>
+<form class="register-form">
+<label for="email"></label>
+<input id="email" name="email" type="email" placeholder="enter email">
+<label for="username"></label>
+<input id="username" name="username" type="text" placeholder="enter username">
+<label for="password"></label>
+<input id="password" name="password" type="password" placeholder="enter password">
+<button type="submit">submit</button>
+<button type="button" onclick="window.history.go(-1)" value="cancel">Back</button>
 </form>

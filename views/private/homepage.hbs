@@ -1,18 +1,23 @@
 <body>
     <header>
-    <h1>welcome! {{username}}</h1>
+    <h1>Welcome! {{username}}</h1>
         <nav>
-            <a href="/auth/logout">Logout</a>
-            <a href="/dashboard">dashboard</a>
+            <a href="/dashboard">Dashboard</a>
             <a href="/createpost">Write a New Blog Post</a>
+            <a href="/auth/logout">Logout</a>
         </nav>
-    <h1>This is where all of the posts will go</h1>
 
         <h1>All Posts</h1>
          {{#each posts}}
-        <section class="post-wrap">{{title}}</section>
-        <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-        <a href="/post/{{id}}">{{title}}</a>
+        <section class="post-wrap">
+            <p>Blog Post Title:</p>
+            <p>{{title}}</p>
+            <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
+            <p>Blog Post Preview:</p>
+            <textarea readonly rows="5" style="resize: none;">{{content}}</textarea>
+            <p>Interested!</p>
+            <a href="/post/{{id}}">Continue Reading!</a>
+        </section>
         {{/each}}
 
     </header>
