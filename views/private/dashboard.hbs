@@ -11,11 +11,12 @@
 
         <h1>Your Posts:</h1>
         {{#each posts}}
-        <p>Blog Post:</p>
         <section>
+            <p>Blog Post Title:</p>
             <p>{{title}}</p>
             <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-            <textarea readonly row="5" class="dashboard-textarea" style="resize:none;">{{content}}</textarea>
+            <p>Blog Post Preview:</p>
+            <textarea readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
             <p>Post Options:</p>
             <a href="/editpost/{{id}}">Edit Post</a>
             <button class="btn delete-button delete-post" data-post-id="{{id}}">Delete Post</button>
