@@ -1,0 +1,22 @@
+<body>
+    <header>
+    <h1>Welcome! {{username}}</h1>
+    <h1>Edit Post Page</h1>
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/homepage">Homepage</a>
+            <a href="/auth/logout">Logout</a>
+        </nav>
+    </header>
+
+    <h1>{{title}}</h1>
+    <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
+    <form class="edit-post-form">
+        <p>Edit Post Title</p>
+        <textarea class="edit-post-title-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{title}}</textarea>
+        <p>Edit Post Content</p>
+        <textarea class="edit-post-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{content}}</textarea>
+        <p>Edit Post?</p>
+        <button type="submit">Edit Post</button>
+    </form>
+</body>
