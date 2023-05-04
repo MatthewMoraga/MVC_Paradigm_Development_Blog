@@ -1,3 +1,11 @@
+// a function that handles the comment functionality on the post page
+// post_id parse the last element of the pathname from window.location
+// and converts it to an integer which gets the unique identifier
+// from the URL of the post to match it to its comments
+// when the user enters a comment and hits the submit button
+// then an event listener is triggered on the form that checks and adds
+// the users comment to the database with a post method  
+
 const addComment = async (event) => {
     event.preventDefault();
 

@@ -1,3 +1,11 @@
+// function that handles the register functionality of the register page
+// when the user enters and email, username, and password the server responds
+// then a button is pressed that initiates the function
+// and checks to see if they are valid to store to the database 
+// if the values are valid then store the values and send the user to their dashboard page
+// otherwise throw the user an error 
+// then the event listener below checks the form to see if the conditions are met
+
 const registerFormHandling = async (event) => {
     event.preventDefault();
 

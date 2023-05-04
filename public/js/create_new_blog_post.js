@@ -4,6 +4,7 @@
 // then a submit event is listened for
 // then upon success the user is taken to the dashboard page where they will see their new post
 // otherwise throw the user an alert error
+// then the event listener checks to see of the conditions and values are there and initiates the function
 
 
 const createNewBlogPost = async (event) => {
