@@ -65,7 +65,7 @@ router.get("/post/:id", isAutheticated, async (req, res) => {
         });
         const post = postData.get({ plain: true });
         const user = await User.findByPk(req.session.user_id);
-        res.render("post", {
+        res.render("private/blogpost", {
             ...post,
             email: user.email,
             username: user.username

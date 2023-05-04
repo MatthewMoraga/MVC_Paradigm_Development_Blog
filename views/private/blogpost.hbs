@@ -1,0 +1,30 @@
+<body>
+    <header>
+    <h1>Welcome! {{username}}</h1>
+    <h1>Your Dashboard</h1>
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/homepage">Homepage</a>
+            <a href="/auth/logout">Logout</a>
+        </nav>
+    </header>
+
+    <h1>{{title}}</h1>
+    <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
+    <p>{{content}}</p>
+    <p>Enter A Comment</p>
+    <form class="comment-form">
+        <textarea style="resize: none;" rows="5" placeholder="Enter Comment Here"></textarea>
+        <p>Comment Options:</p>
+        <button type="submit">Submit Comment</button>
+    </form>
+    <h2>BlogPost Comments:</h2>
+    {{#each comments}}
+        <section id="comment-wrapper">
+            <p>{{comment_text}}</p>
+            <p>Comment By: {{user.username}} On: {{format_date createdAt}}</p>
+        </section>
+    {{/each}}
+
+
+</body>
