@@ -68,7 +68,7 @@ router.get("/post/:id", isAutheticated, async (req, res) => {
         res.render("private/blogpost", {
             ...post,
             email: user.email,
-            username: user.username
+            username: user.username,
         });
     } catch (err) {
         res.status(500).json(err);
