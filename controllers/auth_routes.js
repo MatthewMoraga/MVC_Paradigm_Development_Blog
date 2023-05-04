@@ -1,6 +1,6 @@
 // importing packages 
 const router = require("express").Router();
-const User = require("../models/User");
+const { User } = require("../models");
 
 // login post route for the user to send a post req to the the login page form
 // const user_data is the form data for email/password from the User model
