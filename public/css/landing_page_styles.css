@@ -1,0 +1,44 @@
+/* header styles */
+
+.landing-header {
+    text-align: center;
+}
+
+/* landing page title stlyes */
+
+.landing-title {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    border: 5px solid gold;
+    border-radius: 5px;
+    background-color: purple;
+    color: gold;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5) ;
+}
+
+/* landing page login/register styles */
+
+.landing-select {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.landing-select:hover {
+    color: gold;
+    background-color: purple;
+    border: 2px solid gold;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 1);
+}
+
