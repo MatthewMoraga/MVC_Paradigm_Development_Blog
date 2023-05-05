@@ -13,10 +13,13 @@
     <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
     <form class="edit-post-form">
         <p>Edit Post Title</p>
-        <textarea class="edit-post-title-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{title}}</textarea>
+        <label for="edit-post-title"></label>
+        <input type="text" id="edit-post-title" placeholder="Edit Title Here" value="{{title}}"></input>
         <p>Edit Post Content</p>
-        <textarea class="edit-post-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{content}}</textarea>
-        <p>Edit Post?</p>
-        <button type="submit">Edit Post</button>
+        <label for="edit-post-content"></label>
+        <textarea id="edit-post-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{content}}</textarea>
+        <p>Edit Post Options:</p>
+        <button type="submit" id="edit-post-button">Edit Post</button>
+        <button type="button" id="delete-post-button">Delete Post</button>
     </form>
 </body>

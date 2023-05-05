@@ -28,6 +28,8 @@ const createNewBlogPost = async (event) => {
     }
 };
 
+// event listener for the form submit button on the create post page
+
 const createNewBlogPostForm = document.querySelector(".createBlogPostForm");
 if (createNewBlogPostForm) {
     createNewBlogPostForm.addEventListener("submit", createNewBlogPost);

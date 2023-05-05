@@ -27,4 +27,6 @@ const deletePostHandling = (event) => {
     }
 };
 
+// event listener for the delete button on the dashboard page
+
 document.addEventListener("click", deletePostHandling);
