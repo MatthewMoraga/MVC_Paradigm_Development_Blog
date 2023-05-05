@@ -80,10 +80,10 @@ router.post("/", isAutheticated, async (req, res) => {
 // if successful respond back with the json update so that the user can see the update
 // to thier post otherwise throw a 500 error
 
-router.put("/id", isAutheticated, async (req, res) => {
+router.put("/:id", isAutheticated, async (req, res) => {
     try {
         const updatedBlogPost = await Post.update(req.body, {
-            where: {id: req.params.id},
+            where: { id: req.params.id },
         });
 
         if (!updatedBlogPost) {

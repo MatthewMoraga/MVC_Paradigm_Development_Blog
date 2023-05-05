@@ -30,6 +30,8 @@ const addComment = async (event) => {
     }
 };
 
+// event listener for the comment form submit button on the post page
+
 const addCommentForm = document.querySelector(".comment-form");
 if (addCommentForm) {
     addCommentForm.addEventListener("submit", addComment)

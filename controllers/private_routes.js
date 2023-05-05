@@ -75,7 +75,7 @@ router.get("/post/:id", isAutheticated, async (req, res) => {
     }
 });
 
-router.get("/editpost/:id", async (req, res) => {
+router.get("/editpost/:id", isAutheticated, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -86,7 +86,7 @@ router.get("/editpost/:id", async (req, res) => {
                 },
             ],
         });
-
+        
         const post = postData.get({ plain: true });
         const user = await User.findByPk(req.session.user_id);
 

@@ -28,6 +28,8 @@ const registerFormHandling = async (event) => {
     }
 };
 
+// event listener for the register form submit button on the register page 
+
 const registerForm = document.querySelector(".register-form");
 if (registerForm) {
     registerForm.addEventListener("submit", registerFormHandling);

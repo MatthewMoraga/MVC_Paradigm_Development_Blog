@@ -13,7 +13,7 @@
         {{#each posts}}
         <section>
             <p>Blog Post Title:</p>
-            <p>{{title}}</p>
+            <p><a href="/post/{{id}}">{{title}}</a></p>
             <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
             <p>Blog Post Preview:</p>
             <textarea readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
