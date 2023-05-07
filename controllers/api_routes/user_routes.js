@@ -9,7 +9,7 @@ const isAutheticated = require("../../utilities/isAuth");
 // when login post it gets all of the users and matches what the user enters on the login
 // then finds the user from this api route and logs them in otherwise throws an error
 
-router.get("/", isAutheticated, (req, res) => {
+router.get("/", (req, res) => {
     User.findAll({
         attributes: { exclude: ["password"] },
     })
