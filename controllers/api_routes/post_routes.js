@@ -59,7 +59,7 @@ router.get("/:id", isAutheticated, async (req, res) => {
 // they only see their posts, and they see all posts on the home page
 // if successfull post blogPost to /api/posts otherwise throw a 404 error
 
-router.post("/", isAutheticated, async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         const createBlogPost = await Post.create({
             ...req.body,
