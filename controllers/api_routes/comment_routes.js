@@ -10,7 +10,7 @@ const isAuthenticated = require("../../utilities/isAuth");
 // to the post route and then a comment is made with the attached user id
 // otherwise return an error 
 
-router.post("/", async (req, res) => {
+router.post("/", isAuthenticated, async (req, res) => {
     try {
         const addComment = await Comment.create({
             ...req.body,
