@@ -1,0 +1,139 @@
+/* full dashboard page styles */
+.dashboard-page, .dashboard-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}
+
+.dashboard-header {
+    margin: 0px 10px 0px 10px;
+    background-color: bisque;
+}
+
+/* welcome section styles */
+ 
+.welcome-section {
+    margin: 5px;
+    padding: 5px;
+}
+
+.welcome-section, h1 {
+    padding: 5px;
+    text-align: center;
+}
+
+/* dashboard navbar styles */
+
+.dashboard-navbar {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    background-color: #333;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* dashboard nav bar anchor styles */
+
+.navbar-a {
+    margin: 0px 10px 0px 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+/* wrapper for the user's posts styles */
+
+.blogpost-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px 0px 10px;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+/* the post styles */
+
+.blogpost-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    border: 5px solid blue;
+    border-radius: 5px;
+    width: 250px;
+}
+
+/* post card a tags styles */
+
+.blogpost-link {
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* a tag hover styles */
+
+.blogpost-link:hover {
+    color: gold;
+    background-color: purple;
+    border: 2px solid gold;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 1);
+}
+
+/* card p-tag styles */
+
+.blog-post-p {
+    margin: 5px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* post text area styles */
+
+.blog-post-preview {
+    margin: 5px;
+}
+
+/* delete button styles */
+
+.delete-post {
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    font-family: inherit;
+   
+}
+
+/* delete hover styles */
+
+.delete-post:hover {
+    color: gold;
+    background-color: purple;
+    border: 2px solid gold;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 1);
+}

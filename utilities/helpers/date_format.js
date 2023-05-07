@@ -6,6 +6,6 @@ module.exports = {
         const minutes = d.getMinutes().toString().padStart(2, "0");
         const timeFormat = `${hours}:${minutes}`;
 
-        return `${dateFormat} at ${timeFormat}`
+        return `${dateFormat} At ${timeFormat}`
     }
 }
