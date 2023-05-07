@@ -4,9 +4,10 @@
 require("dotenv").config();
 const express = require("express");
 const expressSession = require("express-session");
-const db = require("./config/connection");
-const { engine } = require("express-handlebars");
+const SequelizeStore = require("connect-session-sequelize")(expressSession.Store);
 const routes = require("./controllers");
+const sequelize = require("./config/connection");
+const { engine } = require("express-handlebars");
 
 
 // PORT also needs to be set for Heroku deployment setting
@@ -14,6 +15,19 @@ const routes = require("./controllers");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// setting up a session object since heroku errors connect.session has memory leaks
+sessionObject = {
+    secret: process.env.SESSION_SECRET,
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize,
+    }),
+};
+
+// now we have a sequelize connect.session
+app.use(expressSession(sessionObject));
 
 
 
@@ -34,17 +48,18 @@ app.engine("hbs", engine({
 app.set("view engine", "hbs");
 app.set("views", "./views");
 
-// setting up the session for the routes
-app.use(expressSession({
-    secret: process.env.SESSION_SECRET,
-    cookie: {},
-    resave: false,
-    saveUninitialized: false,
-}));
+app.use(
+    expressSession({
+        secret: process.env.SESSION_SECRET,
+        store: new SequelizeStore({ db: sequelize }),
+        resave: false,
+        saveUninitialized: false
+    })
+)
 
 app.use(routes);
 
 // db sync to start our server with the database
-db.sync().then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
