@@ -43,23 +43,23 @@ That's pretty much it, hope I'm not forgetting anything.
 # Screenshots
 
 # Landing Page
-## ![landing page](assets\blog_website_landing_page.jpg)
+## ![landing page.](assets\blog_website_landing_page.jpg)
 
 # Login Page
-## ![login page](assets\blog_website_login_page.jpg)
+## ![login page.](assets\blog_website_login_page.jpg)
 Footnote! register page looks the same
 
 # Dashboard
-## ![dashboard page](assets\blog_website_dashboard_page.jpg)
+## ![dashboard page.](assets\blog_website_dashboard_page.jpg)
 
 # Homepage
-## ![homepage](assets\blog_website_homepage.jpg)
+## ![homepage.](assets\blog_website_homepage.jpg)
 
 # Post Page
-## ![post page](assets\blog_website_post_page.jpg)
+## ![post page.](assets\blog_website_post_page.jpg)
 
 ## Edit Post Page
-## ![edit page](assets\blog_website_edit_page.jpg)
+## ![edit page.](assets\blog_website_edit_page.jpg)
 
 ## Contributions
 Matthew Moraga
