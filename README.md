@@ -43,7 +43,7 @@ That's pretty much it, hope I'm not forgetting anything.
 # Screenshots
 
 # Landing Page
-## ![landing page.](assets\blog_website_landing_page.jpg)
+## ![landing page.]https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_landing_page.jpg)
 
 # Login Page
 ## ![login page.](assets\blog_website_login_page.jpg)
