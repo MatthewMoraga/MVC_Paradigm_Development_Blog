@@ -45,6 +45,6 @@ app.use(expressSession({
 app.use(routes);
 
 // db sync to start our server with the database
-db.sync({ force: false }).then(() => {
+db.sync().then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
