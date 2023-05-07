@@ -43,22 +43,28 @@ That's pretty much it, hope I'm not forgetting anything.
 # Screenshots
 
 # Landing Page
+## ![](assets/blog_website_landing_page.jpg)
 ## ![](https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_landing_page.jpg)
 
 # Login Page
+## ![](assets/blog_website_login_page.jpg)
 ## ![](https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_login_page.jpg)
 Footnote! register page looks the same
 
 # Dashboard
+## ![](assets/blog_website_dashboard_page.jpg)
 ## ![](https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_dashboard_page.jpg)
 
 # Homepage
+## ![](assets/blog_website_homepage.jpg)
 ## ![](https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_homepage.jpg)
 
 # Post Page
+## ![](assets/blog_website_post_page.jpg)
 ## ![](https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_post_page.jpg)
 
 ## Edit Post Page
+## ![](assets/blog_website_edit_page.jpg)
 ## ![](https://github.com/MatthewMoraga/MVC_Paradigm_Development_Blog/blob/main/assets/blog_website_edit_page.jpg)
 
 ## Contributions
