@@ -1,25 +1,45 @@
-<body>
-    <header>
-    <h1>Welcome! {{username}}</h1>
-    <h1>Edit Post Page</h1>
-        <nav>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/homepage">Homepage</a>
-            <a href="/auth/logout">Logout</a>
-        </nav>
-    </header>
+<html class="global-html">
+    <body class="global-body">
+        <header class="global-header">
+        <h1>Welcome!</h1>
+        <h1>{{username}}</h1>
+        <h1>Edit Post Page</h1>
+            <nav class="global-navbar">
+                <a class="hover-underline-animation navbar-a" href="/dashboard">Dashboard</a>
+                <a class="hover-underline-animation navbar-a" href="/homepage">Homepage</a>
+                <a class="hover-underline-animation navbar-a" href="/auth/logout">Logout</a>
+            </nav>
+        </header>
 
-    <h1>{{title}}</h1>
-    <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-    <form class="edit-post-form">
-        <p>Edit Post Title</p>
-        <label for="edit-post-title"></label>
-        <input type="text" id="edit-post-title" placeholder="Edit Title Here" value="{{title}}"></input>
-        <p>Edit Post Content</p>
-        <label for="edit-post-content"></label>
-        <textarea id="edit-post-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{content}}</textarea>
-        <p>Edit Post Options:</p>
-        <button type="submit" id="edit-post-button">Edit Post</button>
-        <button type="button" id="delete-post-button">Delete Post</button>
-    </form>
-</body>
+        <h1 class="global-title">{{title}}</h1>
+        <section class="blogpost-details-section">
+            <section class="blogpost-details-wrapper">
+                <section class="blogpost-details-card">
+                    <h1>Blog Details</h1>
+                    <p>Created By:</p>
+                    <p>{{user.username}}</p>
+                    <p>Date: {{format_date createdAt}}</p>
+                </section>
+            </section>
+        </section>
+
+        <section class="edit-form-section">
+            <section class="edit-form-wrapper">
+                <section class="edit-form-view">
+                    <form class="edit-post-form">
+                        <p class="edit-post-p">Edit Post Title</p>
+                        <label for="edit-post-title"></label>
+                        <input type="text" class="edit-blog-post-title" id="edit-post-title" placeholder="Edit Title Here" value="{{title}}"></input>
+                        <p class="edit-post-p">Edit Post Content</p>
+                        <label for="edit-post-content"></label>
+                        <textarea class="edit-blog-post-content" id="edit-post-content" style="resize: none;" rows="5" placeholder="Edit Post Here">{{content}}</textarea>
+                        <p class="edit-post-p">Edit Post Options:</p>
+                        <button type="submit" class="edit-buttons" id="edit-post-button">Edit Post</button>
+                        <button type="button" class="edit-buttons" id="delete-post-button">Delete Post</button>
+                    </form>
+                </section>
+            </section>
+        </section>
+
+    </body>
+</html>
