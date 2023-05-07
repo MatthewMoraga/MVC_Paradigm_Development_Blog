@@ -1,13 +1,13 @@
 // importing packages
 // not everything will be ready for import. I usually start with the server setup as guideline to help me what to decide to do next
 // then i setup .env, and connection from there
-require("dotenv").config();
 const express = require("express");
 const expressSession = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(expressSession.Store);
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const { engine } = require("express-handlebars");
+require("dotenv").config();
 
 
 // PORT also needs to be set for Heroku deployment setting
