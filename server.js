@@ -12,7 +12,7 @@ const routes = require("./controllers");
 // PORT also needs to be set for Heroku deployment setting
 // setting up port and connection
 const app = express();
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001;
 
 
 
@@ -45,6 +45,6 @@ app.use(expressSession({
 app.use(routes);
 
 // db sync to start our server with the database
-db.sync( {force: false }).then(() => {
+db.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
