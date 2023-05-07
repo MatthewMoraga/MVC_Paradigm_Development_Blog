@@ -1,34 +1,21 @@
-
-/* post text area styles */
-
-.blog-post-preview {
-    margin: 5px;
-}
-
-/* delete button styles */
-
-.delete-post {
+.continue-reading-link {
     margin: 5px;
     padding: 5px;
     color: black;
     font-size: 20px;
     font-weight: bold;
-    width: 150px;
+    width: 200px;
     text-decoration: none;
-    background-color: transparent;
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    text-align: left;
-    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
     transition: 0.5s;
-    font-family: inherit;
-   
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* delete hover styles */
+/* a tag hover styles */
 
-.delete-post:hover {
+.continue-reading-link:hover {
     color: gold;
     background-color: purple;
     border: 2px solid gold;
