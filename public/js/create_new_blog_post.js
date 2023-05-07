@@ -10,8 +10,8 @@
 const createNewBlogPost = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector("#blogPostTitlePost").value.trim();
-    const content = document.querySelector("#blogPostContentPost").value.trim();
+    const title = document.querySelector("#create-blog-post-title").value.trim();
+    const content = document.querySelector("#create-blog-post-content").value.trim();
 
     if (title && content) {
         const blogPostResponse = await fetch("/api/posts", {
@@ -30,7 +30,7 @@ const createNewBlogPost = async (event) => {
 
 // event listener for the form submit button on the create post page
 
-const createNewBlogPostForm = document.querySelector(".createBlogPostForm");
+const createNewBlogPostForm = document.querySelector(".create-blog-post-form");
 if (createNewBlogPostForm) {
     createNewBlogPostForm.addEventListener("submit", createNewBlogPost);
 }

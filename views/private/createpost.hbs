@@ -1,28 +1,34 @@
-<body>
-    <header>
-    <h1>Welcome! {{username}}</h1>
-        <nav>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/homepage">Homepage</a>
-            <a href="/auth/logout">Logout</a>
-        </nav>
-    <h1>New BlogPost Form</h1>
-
-        <section>Create a New BlogPost</section>
-
-        <form class="createBlogPostForm">
-                <label for="blogPostTitlePost"></label>
-            <section>
-                <input name="title" id="blogPostTitlePost" type="text" placeholder="Enter BlogPost Title">
+<html class="global-html">
+    <body class="global-body">
+        <header class="global-header">
+            <section class="welcome-section">
+                <h1>Welcome!</h1>
+                <h1>{{username}}</h1>
+                <h1>Create Post Page</h1>
             </section>
-                <label for="blogPostContentPost"></label>
-            <section>
-                <textarea name="content" id="blogPostContentPost" rows="10" style="resize: none;" placeholder="Enter BlogPost"></textarea>
+            <nav class="global-navbar">
+                <a class="hover-underline-animation navbar-a" href="/dashboard">Dashboard</a>
+                <a class="hover-underline-animation navbar-a" href="/homepage">Homepage</a>
+                <a class="hover-underline-animation navbar-a" href="/auth/logout">Logout</a>
+            </nav>
+        </header>
+
+            <h1 class="create-post-title">Create New Blog Post</h1>
+        <section class="create-form-section">
+            <section class="create-form-wrapper">
+                <section class="create-form-view">
+                    <form class="create-blog-post-form">
+                            <label for="create-blog-post-title"></label>
+                            <input class="create-blog-post-title" name="title" id="create-blog-post-title" type="text" placeholder="Enter Blog Post Title">
+                            <label for="create-blog-post-content"></label>
+                            <textarea name="content" class="create-blog-post-content" id="create-blog-post-content" rows="10" style="resize: none;" placeholder="Enter Blog Post"></textarea>
+                        <button type="submit" class="create-blog-post-button">Create Blog Post</button>
+                    </form>
+                </section>
             </section>
-            <button type="submit">Create BlogPost</button>
-        </form>
+        </section>
+    </body>
+</html>
 
 
-    </header>
-</body>
 
