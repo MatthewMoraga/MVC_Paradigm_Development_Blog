@@ -17,7 +17,6 @@ const PORT = process.env.PORT || 3001;
 
 // setting up a session object since heroku errors connect.session has memory leaks
 sessionObject = {
-    secret: process.env.SESSION_SECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -50,7 +49,6 @@ app.set("views", "./views");
 
 app.use(
     expressSession({
-        secret: process.env.SESSION_SECRET,
         store: new SequelizeStore({ db: sequelize }),
         resave: false,
         saveUninitialized: false
