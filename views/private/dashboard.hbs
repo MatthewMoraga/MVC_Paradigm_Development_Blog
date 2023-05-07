@@ -1,27 +1,37 @@
-<body>
-    <header>
-    <h1>Welcome! {{username}}</h1>
-    <h1>Your Dashboard</h1>
-        <nav>
-            <a href="/homepage">Homepage</a>
-            <a href="/createpost">Write a New Blog Post</a>
-            <a href="/auth/logout">Logout</a>
-        </nav>
-    </header>
+<html class="dashboard-page">
+    <body class="dashboard-body">
+        <header class="dashboard-header">
+            <section class="welcome-section">
+                <h1>Welcome!</h1>
+                <h1>{{username}}</h1>
+                <h1>Your Dashboard</h1>
+            </section>
+            <nav class="dashboard-navbar">
+                <a class="hover-underline-animation navbar-a" href="/homepage">Homepage</a>
+                <a class="hover-underline-animation navbar-a" href="/createpost">Write a New Blog Post</a>
+                <a class="hover-underline-animation navbar-a" href="/auth/logout">Logout</a>
+            </nav>
+        </header>
+            <h1>Your Posts:</h1>
+            <section class="blogpost-wrapper">
+                {{#each posts}}
+                    <section class="blogpost-card">
+                        <p class="blog-post-p">Blog Post Title:</p>
+                        <a class="blogpost-link" href="/post/{{id}}">{{title}}</a>
+                        <p class="blog-post-p">Created By: </p>
+                        <p class="blog-post-p">{{user.username}}</p>
+                        <p class="blog-post-p">Date: {{format_date createdAt}}</p>
+                        <p class="blog-post-p">Blog Post Preview:</p>
+                        <textarea class="blog-post-preview" readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
+                        <p class="blog-post-p">Post Options:</p>
+                        <a class="blogpost-link" href="/editpost/{{id}}">Edit Post</a>
+                        <button class="delete-post" data-post-id="{{id}}">Delete Post</button>
+                    </section>
+                {{/each}}
+            </section>
+    </body>
+</html>
 
-        <h1>Your Posts:</h1>
-        {{#each posts}}
-        <section>
-            <p>Blog Post Title:</p>
-            <p><a href="/post/{{id}}">{{title}}</a></p>
-            <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-            <p>Blog Post Preview:</p>
-            <textarea readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
-            <p>Post Options:</p>
-            <a href="/editpost/{{id}}">Edit Post</a>
-            <button class="btn delete-button delete-post" data-post-id="{{id}}">Delete Post</button>
-        </section>
-        {{/each}}
-</body>
+
 
 

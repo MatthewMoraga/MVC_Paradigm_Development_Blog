@@ -6,15 +6,27 @@
     box-sizing: border-box;
 }
 
-/* GLOBAL BODY STYLES */
+/* styles for a cool underline animation */
 
-html, body {
-    display: flex;
+.hover-underline-animation {
+    display: inline-block;
     position: relative;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: beige;
 }
 
+.hover-underline-animation:after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

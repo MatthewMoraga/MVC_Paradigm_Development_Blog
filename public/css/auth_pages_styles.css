@@ -1,3 +1,14 @@
+.auth-page, .auth-body {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: beige;
+}
+
+
 /* wrapper styles */
 
 .auth-form-wrapper {
