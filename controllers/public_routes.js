@@ -11,7 +11,7 @@ function isLoggedIn(req, res, next) {
 
 // renders the home page view
 
-router.get("/", isLoggedIn, (req, res) => {
+router.get("/", (req, res) => {
     res.render("index");
 });
 
