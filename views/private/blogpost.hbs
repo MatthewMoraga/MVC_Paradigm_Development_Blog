@@ -1,31 +1,58 @@
-<body>
-    <header>
-    <h1>Welcome! {{username}}</h1>
-    <h1>Post Page</h1>
-        <nav>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/homepage">Homepage</a>
-            <a href="/auth/logout">Logout</a>
-        </nav>
-    </header>
+<html class="global-html">
+    <body class="global-body">
+        <header class="global-header">
+            <section class="welcome-section">
+                <h1>Welcome!</h1>
+                <h1>{{username}}</h1>
+                <h1>Post Page</h1>
+            </section>
+            <nav class="dashboard-navbar">
+                <a class="hover-underline-animation navbar-a" href="/dashboard">Dashboard</a>
+                <a class="hover-underline-animation navbar-a" href="/homepage">Homepage</a>
+                <a class="hover-underline-animation navbar-a" href="/auth/logout">Logout</a>
+            </nav>
+        </header>
 
-    <h1>{{title}}</h1>
-    <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-    <p>{{content}}</p>
-    <p>Enter A Comment</p>
-    <form class="comment-form">
-        <label for="comment"></label>
-        <textarea class="comment-content" style="resize: none;" rows="5" placeholder="Enter Comment Here"></textarea>
-        <p>Comment Options:</p>
-        <button type="submit">Submit Comment</button>
-    </form>
-    <h2>BlogPost Comments:</h2>
-    {{#each comments}}
-        <section id="comment-wrapper">
-            <p>{{comment_text}}</p>
-            <p>Comment By: {{user.username}} On: {{format_date createdAt}}</p>
+            <h1 class="global-title">{{title}}</h1>
+            <section class="blogpost-details-section">
+                <section class="blogpost-details-wrapper">
+                    <section class="blogpost-details-card">
+                        <h1>Blog Details</h1>
+                        <p class="blog-details-p">Created By:</p>
+                        <p class="blog-details-p">{{user.username}}</p>
+                        <p class="blog-details-p">Date: {{format_date createdAt}}</p>
+                    </section>
+                </section>
+            </section>
+
+            <section class="blogpost-view-wrapper">
+                <textarea class="blogpost-view" readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
+            </section>
+
+            <section class="comments-form-section">
+                <section class="comment-form-wrapper">
+                    <section class="comment-form-view">
+                        <form class="comment-form">
+                            <label for="comment"></label>
+                            <textarea class="comment-content" style="resize: none;" rows="5" placeholder="Enter Comment Here"></textarea>
+                            <button type="submit" class="comment-submit">Submit Comment</button>
+                        </form>
+                    </section>
+                </section>
+            </section>
+
+        <h1 class="comments-title">Comments Section</h1>
+        <section class="comments-section">
+            <section class="comment-wrapper">
+                {{#each comments}}
+                <section class="comment-card">
+                    <p class="comment-card-p">Comment By: {{user.username}} | On: {{format_date createdAt}}</p>
+                    <p class="comment-card-comment">{{comment_text}}</p>
+                </section>
+                {{/each}}
+            </section>
         </section>
-    {{/each}}
+        
 
-
-</body>
+    </body>
+</html>

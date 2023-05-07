@@ -12,23 +12,23 @@
                 <a class="hover-underline-animation navbar-a" href="/auth/logout">Logout</a>
             </nav>
         </header>
-            <h1>Your Posts:</h1>
-            <section class="blogpost-wrapper">
-                {{#each posts}}
-                    <section class="blogpost-card">
-                        <p class="blog-post-p">Blog Post Title:</p>
-                        <a class="blogpost-link" href="/post/{{id}}">{{title}}</a>
-                        <p class="blog-post-p">Created By: </p>
-                        <p class="blog-post-p">{{user.username}}</p>
-                        <p class="blog-post-p">Date: {{format_date createdAt}}</p>
-                        <p class="blog-post-p">Blog Post Preview:</p>
-                        <textarea class="blog-post-preview" readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
-                        <p class="blog-post-p">Post Options:</p>
-                        <a class="blogpost-link" href="/editpost/{{id}}">Edit Post</a>
-                        <button class="delete-post" data-post-id="{{id}}">Delete Post</button>
-                    </section>
-                {{/each}}
-            </section>
+        <h1>Your Posts</h1>
+        <section class="blogpost-wrapper">
+            {{#each posts}}
+                <section class="blogpost-card">
+                    <p class="blog-post-p">Blog Post Title:</p>
+                    <a class="blogpost-link" href="/post/{{id}}">{{title}}</a>
+                    <p class="blog-post-p">Created By: </p>
+                    <p class="blog-post-p">{{user.username}}</p>
+                    <p class="blog-post-p">Date: {{format_date createdAt}}</p>
+                    <p class="blog-post-p">Blog Post Preview:</p>
+                    <textarea class="blog-post-preview" readonly rows="5" class="dashboard-textarea" style="resize: none;">{{content}}</textarea>
+                    <p class="blog-post-p">Post Options:</p>
+                    <a class="blogpost-link" href="/editpost/{{id}}">Edit Post</a>
+                    <button class="delete-post" data-post-id="{{id}}">Delete Post</button>
+                </section>
+            {{/each}}
+        </section>
     </body>
 </html>
 
