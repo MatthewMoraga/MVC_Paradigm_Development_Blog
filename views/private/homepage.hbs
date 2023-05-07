@@ -1,25 +1,34 @@
-<body>
-    <header>
-    <h1>Welcome! {{username}}</h1>
-        <nav>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/createpost">Write a New Blog Post</a>
-            <a href="/auth/logout">Logout</a>
-        </nav>
+<html class="global-html">
+    <body class="global-body">
+        <header class="global-header">
+            <section class="welcome-section">
+                <h1>Welcome!</h1>
+                <h1>{{username}}</h1>
+                <h1>Homepage</h1>
+            </section>
+            <nav class="dashboard-navbar">
+                <a class="hover-underline-animation navbar-a" href="/dashboard">Dashboard</a>
+                <a class="hover-underline-animation navbar-a" href="/createpost">Write a New Blog Post</a>
+                <a class="hover-underline-animation navbar-a" href="/auth/logout">Logout</a>
+            </nav>
+        </header>
+            <h1>All Posts</h1>
+            <section class="blogpost-wrapper">
+                {{#each posts}}
+                <section class="blogpost-card">
+                    <p class="blog-post-p">Blog Post Title:</p>
+                    <p class="blog-post-p">{{title}}</p>
+                    <p class="blog-post-p">Created By:</p>
+                    <p class="blog-post-p">{{user.username}}</p>
+                    <p class="blog-post-p">Date: {{format_date createdAt}}</p>
+                    <p class="blog-post-p">Blog Post Preview:</p>
+                    <textarea class="blog-post-preview" readonly rows="5" style="resize: none;">{{content}}</textarea>
+                    <p class="blog-post-p">Interested!</p>
+                    <a class="continue-reading-link" href="/post/{{id}}">Continue Reading!</a>
+                </section>
+                {{/each}}
+            </section>
+    </body>
+</html>
 
-        <h1>All Posts</h1>
-         {{#each posts}}
-        <section class="post-wrap">
-            <p>Blog Post Title:</p>
-            <p>{{title}}</p>
-            <p>Created By: {{user.username}} | Date: {{format_date createdAt}}</p>
-            <p>Blog Post Preview:</p>
-            <textarea readonly rows="5" style="resize: none;">{{content}}</textarea>
-            <p>Interested!</p>
-            <a href="/post/{{id}}">Continue Reading!</a>
-        </section>
-        {{/each}}
-
-    </header>
-</body>
 
