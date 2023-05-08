@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-require('dot').config();
+require('dotenv').config();
 
 console.log(DB_NAME);
 
