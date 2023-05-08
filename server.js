@@ -7,8 +7,6 @@ const SequelizeStore = require("connect-session-sequelize")(expressSession.Store
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const { engine } = require("express-handlebars");
-require("dotenv").config();
-
 
 // PORT also needs to be set for Heroku deployment setting
 // setting up port and connection
