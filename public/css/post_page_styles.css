@@ -58,6 +58,7 @@
 
 .comment-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px 0px;
@@ -73,7 +74,6 @@
 .comment-content {
     margin: 10px;
     padding: 5px;
-    width: 50%;
     height: 40px;
     font-size: 20px;
     font-weight: bold;

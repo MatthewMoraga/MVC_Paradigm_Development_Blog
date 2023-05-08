@@ -1,7 +1,7 @@
 // importing packages
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
-const db = require("../config/connection");
+const sequelize = require("../config/connection");
 
 // creating the parent model
 // setting up an instance method to match the form's submit with the user's password
@@ -54,7 +54,7 @@ User.init(
             allowNull: false
         }
     },  {
-        sequelize: db,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
